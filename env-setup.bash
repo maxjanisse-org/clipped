@@ -1,6 +1,11 @@
 #!/bin/bash
 # Max Janisse - 2026
 
+if [[ $1 == "-R" ]]; then
+    echo -e "Removing existing 'venv' Python environment..."
+    rm -fR venv
+fi
+
 if [ ! -d "venv" ]; then
     echo -e "Creating Python environment..."
     python3 -m venv venv > /dev/null
